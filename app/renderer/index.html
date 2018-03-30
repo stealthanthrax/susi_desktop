@@ -2,21 +2,34 @@
 
 	<head>
 		<title>SUSI</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen">
 		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 
 	<body>
-		<div id="wrapper">
-			<div id="loader"></div>
-			<div>
-				<webview src="https://chat.susi.ai/" allowpopups></webview>	
-			</div>
-		</div>
-		
+			<div id="wrapper">
+					<div>
+					<h3></h3>
+						<webview id="foo" src="https://chat.susi.ai/" style="display:inline-flex; width:100%; height:100%" disablewebsecurity nodeintegration></webview>
+					</div>
+				</div>	
 
 	</body>
-
+	<script>
+		onload = () => {
+		  const webview = document.querySelector('webview')
+		  const indicator = document.querySelector('.indicator')
+	  
+		  const loadstart = () => {
+			indicator.innerText = 'loading...'
+		  }
+	  
+		  const loadstop = () => {
+			indicator.innerText = ''
+		  }
+	  
+		  webview.addEventListener('did-start-loading', loadstart)
+		  webview.addEventListener('did-stop-loading', loadstop)
+		}
+	  </script>
 </html>

@@ -3,6 +3,7 @@ engines:
    enabled: true
    exclude_paths:
      - config/engines.yml
+     - 'app/main/index.js'
  duplication:
    enabled: true
    exclude_paths:
@@ -11,10 +12,12 @@ engines:
    enabled: true
    exclude_paths:
      - config/engines.yml
+     - 'app/main/index.js'
  coverage:
    enabled: true
    exclude_paths:
      - config/engines.yml
+     - 'app/main/index.js'
 exclude_paths:
   - .bundle/
   - spec/**/*
